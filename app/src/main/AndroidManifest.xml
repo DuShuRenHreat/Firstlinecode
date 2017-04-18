@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Chapter12Activity"></activity>
+        <activity
+            android:name=".Chapter12_Activity"
+            android:label="@string/title_activity_chapter12_"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

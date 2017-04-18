@@ -6,9 +6,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends BaseActivity {
-    private ListView lv;
+import com.test.firstlinecode.utils.InitID;
 
+public class MainActivity extends BaseActivity {
+    @InitID(R.id.main_lv)
+    private ListView lv;
     @Override
     public int setLayoutID() {
         return R.layout.activity_main;
@@ -23,7 +25,6 @@ public class MainActivity extends BaseActivity {
     public void doSomething() {
         final String[] strs = {"第12章 最佳的UI体验---Material Design实战"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.textview,strs);
-        lv = (ListView) findViewById(R.id.main_lv);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -31,7 +32,7 @@ public class MainActivity extends BaseActivity {
                 Intent intent = null;
                 switch (i){
                     case 0:
-                        intent = new Intent(MainActivity.this,Chapter12Activity.class);
+                        intent = new Intent(MainActivity.this,Chapter12_Activity.class);
                         intent.putExtra("title",strs[i]);
                         startActivity(intent);
                         break;
